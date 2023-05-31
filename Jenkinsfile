@@ -4,7 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'chmod +x gradle'
+                sh 'git update-index --chmod=+x gradlew
+'
                 sh './gradle build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
